@@ -8,9 +8,9 @@ def parse(expression: str) -> list[Die]:
     Convert a command into a list of die.
 
     Args:
-        example: a command described by ([+-]{0,1}\d*)d(\d+)((?:[+-]\d*)*(?!d)).
+        example: a command described by ([+-]{0,1}\d+)d(\d+)((?:[+-]\d*)*(?!d)).
     """
-    groups = re.findall(r"([+-]{0,1}\d*)d(\d+)((?:[+-]\d*)*(?!d))", expression)
+    groups = re.findall(r"([+-]{0,1}\d*)d(\d+)((?:[+-]\d+)*(?!d))", expression)
     dice = []
     for group in groups:
         num, val, modifier = parse_die(*group)
