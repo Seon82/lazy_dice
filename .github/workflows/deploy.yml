@@ -27,4 +27,5 @@ jobs:
           git reset origin/master --hard
           docker build -t dice:latest .
           docker stop lazy_dice
+          while docker container inspect lazy_dice >/dev/null 2>&1; do sleep 1; done
           docker run --rm -d --env-file .env --name lazy_dice dice
