@@ -1,6 +1,6 @@
 # LazyDice
-[![Linter Actions Status](https://github.com/Seon82/lazy_dice/actions/workflows/black.yml/badge.svg?branch=master)](https://github.com/Seon82/lazy_dice/actions)
-[![Linter Actions Status](https://github.com/Seon82/lazy_dice/actions/workflows/mypy.yml/badge.svg?branch=master)](https://github.com/Seon82/lazy_dice/actions)
+[![Black Actions Status](https://github.com/Seon82/lazy_dice/actions/workflows/black.yml/badge.svg?branch=master)](https://github.com/Seon82/lazy_dice/actions)
+[![Mypy Actions Status](https://github.com/Seon82/lazy_dice/actions/workflows/mypy.yml/badge.svg?branch=master)](https://github.com/Seon82/lazy_dice/actions)
 
 A discord bot with support for [Savage Worlds](https://peginc.com/savage-settings/savage-worlds/) dice parsing.
 

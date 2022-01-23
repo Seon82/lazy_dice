@@ -1,0 +1,30 @@
+name: deploy
+
+on:
+  push:
+    paths-ignore:
+      - .github/*
+    branches:
+      - master
+  workflow_dispatch:
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy newest version
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+        script:  |
+          cd lazy_dice
+          git fetch
+          git reset origin/master --hard
+          docker build -t dice:latest .
+          docker stop lazy_dice
+          docker run --rm -d --env-file .env --name lazy_dice dice
