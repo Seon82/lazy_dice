@@ -1,21 +1,16 @@
-FROM python:3.9
+FROM python:3.9-slim-buster
 
-WORKDIR /home
+WORKDIR /app
 
-# poetry is used to manage dependencies
+# Install poetry:
 RUN pip install poetry
 
-# Copy only requirements for docker cache
-COPY pyproject.toml ./
-COPY poetry.lock ./
+# Copy in the config files:
+COPY pyproject.toml poetry.lock ./
+# Install only dependencies:
+RUN poetry install --no-root --no-dev
 
-# Install globally instead of in a venv
-RUN poetry config virtualenvs.create false
-# Install deps
-RUN poetry install  --no-dev --no-interaction
-
-
-COPY lazy_dice ./lazy_dice
-# COPY pipelines ./pipelines
-
-CMD python lazy_dice/main.py
+# Copy in everything else and install:
+COPY . .
+RUN poetry install --no-dev
+CMD poetry run python lazy_dice/main.py
