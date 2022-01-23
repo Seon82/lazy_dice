@@ -5,7 +5,7 @@ from lazy_dice.die import Die
 
 def parse(expression: str) -> list[Die]:
     """
-    Convert a command into a list of die.
+    Convert a command into a list of dice.
 
     Args:
         example: a command described by ([+-]{0,1}\d+)d(\d+)((?:[+-]\d*)*(?!d)).

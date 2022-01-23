@@ -26,7 +26,7 @@ class History:
 
 class Engine:
     """
-    An object used to run a rolling simulation, including the rethrowing
+    An object used to run a rolling simulation, including the ace
     mechanism.
 
     Args:
@@ -34,7 +34,7 @@ class Engine:
 
     Attributes:
         history: A list of history objects representing the current state of the throw.
-        total: The current tally of the dice throws.
+        total: The current result after summing up past dice throws.
     """
 
     def __init__(self, dice: list[Die]) -> None:
