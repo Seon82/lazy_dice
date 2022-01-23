@@ -56,7 +56,7 @@ class Engine:
         for die, roll in zip(self._dice, rolls):
             reroll = roll.count(die.val)
             if reroll:
-                new_dice.append(Die(reroll, die.val, die.modifier))
+                new_dice.append(Die(reroll, die.val, 0))
         return new_dice
 
     def step(self):
