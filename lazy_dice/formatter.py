@@ -1,4 +1,5 @@
-from lazy_dice import Die, Engine, History
+from lazy_dice.die import Die
+from lazy_dice.engine import Engine, History
 
 
 def format_engine(engine: Engine) -> str:

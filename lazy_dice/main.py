@@ -3,7 +3,7 @@ import os
 import hikari
 from dotenv import load_dotenv
 
-from lazy_dice import Engine
+from lazy_dice.engine import Engine
 from lazy_dice.formatter import format_engine
 from lazy_dice.parser import parse
 

@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from lazy_dice import Die
+from lazy_dice.die import Die
 
 
 @dataclass(frozen=True)

@@ -1,6 +1,6 @@
 import re
 
-from lazy_dice import Die
+from lazy_dice.die import Die
 
 
 def parse(expression: str) -> list[Die]:
